@@ -1,0 +1,19 @@
+paths:
+  /me:
+    get:
+      tags: 
+        - Users
+      summary: Get the user information
+      operationId: me
+      description: Get the user information.
+      security:
+        - bearerAuth: []
+      responses:
+        '202':
+          description: Accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MeResponse'
+        '401':
+          description:  Unauthorized.
