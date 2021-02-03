@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.3...v1.1.4) (2021-02-03)
+
+
+### CI
+
+* **app.yaml:** change the service name ([57065e2](https://github.com/brucegroverlee/moregooder-backend/commit/57065e21d15b085dc15de47501c7fc5ff354bca3))
+
 ### [1.1.3](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.2...v1.1.3) (2021-02-03)
 
 
