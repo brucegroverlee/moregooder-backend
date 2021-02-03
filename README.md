@@ -1,7 +1,16 @@
 # Moregooder [backend]
 
+**url: https://moregooder.uc.r.appspot.com**
+
+
 ## Architecture
 - Clean Architecture / Hexagonal Architecture (Ports and Adapters)
+
+## 
+
+```
+gcloud config set project moregooder
+```
 
 ## References
 - Clean Architecture

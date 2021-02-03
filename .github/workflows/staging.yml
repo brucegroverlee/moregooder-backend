@@ -29,7 +29,6 @@ jobs:
       run: npm run build --if-present
     - uses: ikuanyshbekov/app-yaml-env-compiler@v1.0
       env:
-        SERVICE: ${{ secrets.SERVICE }}
         APP_ENV: ${{ secrets.APP_ENV }}
         SERVER_ROOT: /api
         SERVER_HOST: localhost
@@ -40,7 +39,7 @@ jobs:
         SWAGGER_TITLE: Moregooder API Reference
         SWAGGER_SERVER: "http://localhost:3003/api"
     - name: Deploy to Staging
-      uses: GoogleCloudPlatform/github-actions/appengine-deploy@master
+      uses: google-github-actions/deploy-appengine
       with:
         credentials: ${{ secrets.GCP_SA_KEY }}
         deliverables: --appyaml app-staging.yaml
