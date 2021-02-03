@@ -17,7 +17,7 @@ describe("CreatePerson useCase", () => {
     const presenter = new CreatePersonPresenter();
     const request: ICreatePersonRequestModel = {
       user: {
-        userId: 10,
+        userId: "10",
       },
       data: {
         name: "Fake Name",
