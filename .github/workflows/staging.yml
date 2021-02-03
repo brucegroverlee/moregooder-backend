@@ -39,7 +39,7 @@ jobs:
         SWAGGER_TITLE: Moregooder API Reference
         SWAGGER_SERVER: "http://localhost:3003/api"
     - name: Deploy to Staging
-      uses: google-github-actions/deploy-appengine
+      uses: google-github-actions/deploy-appengine@main
       with:
         credentials: ${{ secrets.GCP_SA_KEY }}
-        deliverables: --appyaml app-staging.yaml
+        deliverables: app-staging.yaml

@@ -39,6 +39,6 @@ jobs:
         SWAGGER_TITLE: Moregooder API Reference
         SWAGGER_SERVER: "https://moregooder.uc.r.appspot.com/api"
     - name: Deploy to Production
-      uses: google-github-actions/deploy-appengine
+      uses: google-github-actions/deploy-appengine@main
       with:
         credentials: ${{ secrets.GCP_SA_KEY }}
