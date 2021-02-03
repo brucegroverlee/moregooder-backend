@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.1...v1.1.2) (2021-02-03)
+
+
+### CI
+
+* **.github:** add ci ([b9f6611](https://github.com/brucegroverlee/moregooder-backend/commit/b9f66110f0af3f4e77c88ff7fe33c6971fd6610d))
+
 ### [1.1.1](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.0...v1.1.1) (2021-02-02)
 
 
