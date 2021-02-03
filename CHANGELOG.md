@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.4...v1.1.5) (2021-02-03)
+
+
+### CI
+
+* **.github:** change env vars ([ade1c03](https://github.com/brucegroverlee/moregooder-backend/commit/ade1c0344d49f8d6c32ad471da1efc52aaf367a5))
+
 ### [1.1.4](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.3...v1.1.4) (2021-02-03)
 
 
