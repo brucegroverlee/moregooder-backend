@@ -33,6 +33,7 @@ export default {
   firestore: {
     GOOGLE_PROJECT_ID: process.env.GOOGLE_PROJECT_ID ,
     GOOGLE_APPLICATION_CREDENTIALS: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+    FIRESTORE_USERS_COLLECTION: process.env.FIRESTORE_USERS_COLLECTION,
   },
   swagger: {
     TITLE: process.env.SWAGGER_TITLE,

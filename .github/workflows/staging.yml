@@ -1,0 +1,45 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Staging CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: deploy to staging
+    environment: staging
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 10.x ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Dependencies
+      run: npm install
+    - name: Build project
+      run: npm run build --if-present
+    - uses: ikuanyshbekov/app-yaml-env-compiler@v1.0
+      env:
+        SERVICE: ${{ secrets.SERVICE }}
+        APP_ENV: ${{ secrets.APP_ENV }}
+        SERVER_ROOT: /api
+        SERVER_HOST: localhost
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }}
+        GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+        FIRESTORE_USERS_COLLECTION: ${{ secrets.FIRESTORE_USERS_COLLECTION }}
+        SWAGGER_TITLE: Moregooder API Reference
+        SWAGGER_SERVER: "http://localhost:3003/api"
+    - name: Deploy to Staging
+      uses: GoogleCloudPlatform/github-actions/appengine-deploy@master
+      with:
+        credentials: ${{ secrets.GCP_SA_KEY }}

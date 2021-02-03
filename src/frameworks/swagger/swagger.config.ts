@@ -8,11 +8,6 @@ export const swaggerConfig = {
       title: config.swagger.TITLE,
       version: pkg.version,
       description: config.swagger.DESCRIPTION,
-      contact: {
-        name: config.swagger.CONTACT_NAME,
-        url: config.swagger.CONTACT_URL,
-        email: config.swagger.CONTACT_EMAIL,
-      },
     },
     servers: [
       {
