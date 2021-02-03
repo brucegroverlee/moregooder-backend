@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.5...v1.1.6) (2021-02-03)
+
+
+### CI
+
+* **.github:** fix the github action artifact ([cdc80b0](https://github.com/brucegroverlee/moregooder-backend/commit/cdc80b04cf0badeae333612df869f39b27c3491e))
+
 ### [1.1.5](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.4...v1.1.5) (2021-02-03)
 
 
