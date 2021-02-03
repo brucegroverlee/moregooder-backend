@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.2...v1.1.3) (2021-02-03)
+
+
+### Bug Fixes
+
+* **package.json:** add some peer dependencies ([7a9bb9a](https://github.com/brucegroverlee/moregooder-backend/commit/7a9bb9a729c4c3899e807b3d83ebd60855d6bf19))
+
 ### [1.1.2](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.1...v1.1.2) (2021-02-03)
 
 
