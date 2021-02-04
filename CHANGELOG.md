@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.6...v1.2.0) (2021-02-04)
+
+
+### Features
+
+* **contacts:** create contact to db [ch111] ([2458267](https://github.com/brucegroverlee/moregooder-backend/commit/2458267a2769584d1ba1c337bb49d1dc0a62b09d))
+
 ### [1.1.6](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.5...v1.1.6) (2021-02-03)
 
 
