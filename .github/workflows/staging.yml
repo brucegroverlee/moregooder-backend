@@ -27,6 +27,8 @@ jobs:
       run: npm install
     - name: Build project
       run: npm run build --if-present
+    - name: Rename app-staging.yaml
+      run: cp ./app-staging.yaml ./app.yaml
     - uses: ikuanyshbekov/app-yaml-env-compiler@v1.0
       env:
         APP_ENV: ${{ secrets.APP_ENV }}
@@ -43,4 +45,3 @@ jobs:
       uses: google-github-actions/deploy-appengine@main
       with:
         credentials: ${{ secrets.GCP_SA_KEY }}
-        deliverables: app-staging.yaml
