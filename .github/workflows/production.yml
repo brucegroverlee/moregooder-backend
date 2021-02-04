@@ -36,6 +36,7 @@ jobs:
         JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }}
         GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
         FIRESTORE_USERS_COLLECTION: ${{ secrets.FIRESTORE_USERS_COLLECTION }}
+        FIRESTORE_CONTACTS_COLLECTION: ${{ secrets.FIRESTORE_CONTACTS_COLLECTION }}
         SWAGGER_TITLE: Moregooder API Reference
         SWAGGER_SERVER: "https://moregooder.uc.r.appspot.com/api"
     - name: Deploy to Production

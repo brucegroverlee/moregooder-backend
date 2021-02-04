@@ -31,13 +31,14 @@ jobs:
       env:
         APP_ENV: ${{ secrets.APP_ENV }}
         SERVER_ROOT: /api
-        SERVER_HOST: localhost
+        SERVER_HOST: https://staging-dot-moregooder.uc.r.appspot.com
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
         JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }}
         GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
         FIRESTORE_USERS_COLLECTION: ${{ secrets.FIRESTORE_USERS_COLLECTION }}
+        FIRESTORE_CONTACTS_COLLECTION: ${{ secrets.FIRESTORE_CONTACTS_COLLECTION }}
         SWAGGER_TITLE: Moregooder API Reference
-        SWAGGER_SERVER: "http://localhost:3003/api"
+        SWAGGER_SERVER: "https://staging-dot-moregooder.uc.r.appspot.com/api"
     - name: Deploy to Staging
       uses: google-github-actions/deploy-appengine@main
       with:
