@@ -1,12 +1,12 @@
 {
   "name": "moregooder-backend",
-  "version": "1.1.6",
+  "version": "1.2.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "test": "npm run tslint && jest --coverage --testTimeout=1200000 --detectOpenHandles --forceExit",
-    "db-migrate": "node node_modules/db-migrate/bin/db-migrate",
+    "test:local": "npm run tslint && cross-env NODE_ENV=test.local jest --coverage --testTimeout=1200000 --detectOpenHandles --forceExit",
     "commit": "git-cz",
     "release": "standard-version",
     "dev": "npm run tslint && nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts,yml",

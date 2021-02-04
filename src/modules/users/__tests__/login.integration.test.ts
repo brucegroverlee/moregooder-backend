@@ -1,5 +1,13 @@
 import dotenv from "dotenv";
-dotenv.config();
+import path from "path";
+
+if (process?.env?.NODE_ENV==="test.local") {
+  dotenv.config({
+    path: path.resolve(process.cwd(), ".env.test"),
+  });
+} else {
+  dotenv.config();
+}
 
 import chai from "chai";
 import chaiHttp from "chai-http";

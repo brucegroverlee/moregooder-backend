@@ -1,12 +1,12 @@
 import express from "express";
-const peopleRouter = express.Router();
+const contactsRouter = express.Router();
 
 import { authentication } from "../../../shared/middlewares/authentication";
 import { validateBody } from "../../../shared/adapters/middlewares/validateBody";
 
 import { createPersonController } from "./createPersonController";
-import { createPersonBody } from "../middlewares/createPersonBody";
+import { createContactBody } from "../middlewares/createContactBody";
 
-peopleRouter.post("/people", authentication, validateBody(createPersonBody), createPersonController);
+contactsRouter.post("/contacts", authentication, validateBody(createContactBody), createPersonController);
 
-export default peopleRouter;
+export default contactsRouter;

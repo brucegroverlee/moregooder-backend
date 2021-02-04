@@ -13,7 +13,7 @@ import { firestore } from "../firestore/firestore";
 import pkg from "../../../package.json";
 
 import usersRouter from "../../modules/users/adapters/controllers/router";
-import peopleRouter from "../../modules/people/adapter/controllers/router";
+import contactsRouter from "../../modules/contacts/adapter/controllers/router";
 
 export class ExpressApp {
   public app: Application;
@@ -55,7 +55,7 @@ export class ExpressApp {
   private LoadRouters(): void {
     const routers: Express.Router[] = [
       usersRouter,
-      peopleRouter,
+      contactsRouter,
     ];
     routers.forEach((router) => {
       this.app.use(config.server.root, router);

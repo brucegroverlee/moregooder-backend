@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/brucegroverlee/moregooder-backend/compare/v1.2.1...v1.2.2) (2021-02-04)
+
+
+### CI
+
+* **.github/staging.yml:** add "rename app-staging.yaml" command ([fb54cc7](https://github.com/brucegroverlee/moregooder-backend/commit/fb54cc780abde2ab4b0c19f3f1f3b45454324088))
+
+### [1.2.1](https://github.com/brucegroverlee/moregooder-backend/compare/v1.2.0...v1.2.1) (2021-02-04)
+
+
+### CI
+
+* ***.yaml:** fixed the env vars on *.yaml files ([b28d325](https://github.com/brucegroverlee/moregooder-backend/commit/b28d325d49cd2b3006086f1b608225fb6ec7288c))
+
+## [1.2.0](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.6...v1.2.0) (2021-02-04)
+
+
+### Features
+
+* **contacts:** create contact to db [ch111] ([2458267](https://github.com/brucegroverlee/moregooder-backend/commit/2458267a2769584d1ba1c337bb49d1dc0a62b09d))
+
 ### [1.1.6](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.5...v1.1.6) (2021-02-03)
 
 

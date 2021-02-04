@@ -1,0 +1,32 @@
+components:
+  schemas:
+    CreateContactRequest:
+      properties:
+        name:
+          type: string
+          example: john
+        email:
+          type: string
+          example: john@email.com
+        country:
+          type: string
+          example: canada
+
+    CreateContactResponse:
+      properties:
+        $ref: '#/components/schemas/Contact' 
+
+    Contact:
+      properties:
+        id:
+          type: string
+          example: bJnb8fWsdWAkh2978kdG
+        name:
+          type: string
+          example: john
+        email:
+          type: string
+          example: john@email.com
+        country:
+          type: string
+          example: canada
