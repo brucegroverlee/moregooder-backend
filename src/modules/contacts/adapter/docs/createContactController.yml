@@ -1,0 +1,26 @@
+paths:
+  /contacts:
+    post:
+      tags: 
+        - Contacts
+      summary: Create a new contact
+      operationId: createContact
+      description: Create a new contact.
+      requestBody:
+        description: Credential object
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateContactRequest'
+      responses:
+        '201':
+          description: Created. Returns the new contact.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        '401':
+          description:  Unauthorized.          
+        '406':
+          description: Not Acceptable. There is an attribute invalid.

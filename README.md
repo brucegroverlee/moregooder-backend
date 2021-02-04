@@ -2,11 +2,15 @@
 
 **url: https://moregooder.uc.r.appspot.com**
 
-
-## Architecture
+## Features
 - Clean Architecture / Hexagonal Architecture (Ports and Adapters)
+- Firestore DB
+- TypeScript
+- Integrtion and unit testing
+- Documentation with Swagger
+- CI with Github Actions
 
-## 
+## Deploy
 
 ```
 gcloud config set project moregooder

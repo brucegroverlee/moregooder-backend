@@ -16,7 +16,7 @@ export class RepositoryMock<T extends IEntities> implements IRepositories<T> {
     const now = new Date();
     const newDocument: any = {
       ...values,
-      id: this.counter,
+      id: JSON.stringify(this.counter),
       createdAt: now,
       updatedAt: now,
     };

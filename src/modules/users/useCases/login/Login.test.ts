@@ -39,7 +39,7 @@ describe("Login useCase", () => {
     const login = new Login(usersRepository, bcrypt, jwt, presenter);
     await login.execute(requestModel);
     expect(typeof presenter.result).toBe("string");
-    expect(presenter.result).toBe("{\"userId\":1}");
+    expect(presenter.result).toBe("{\"userId\":\"1\"}");
   });
 
   it("shouldn\'t login the user. the user doesn\'t exist", async () => {
