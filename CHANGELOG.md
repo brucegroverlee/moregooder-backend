@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/brucegroverlee/moregooder-backend/compare/v1.2.0...v1.2.1) (2021-02-04)
+
+
+### CI
+
+* ***.yaml:** fixed the env vars on *.yaml files ([b28d325](https://github.com/brucegroverlee/moregooder-backend/commit/b28d325d49cd2b3006086f1b608225fb6ec7288c))
+
 ## [1.2.0](https://github.com/brucegroverlee/moregooder-backend/compare/v1.1.6...v1.2.0) (2021-02-04)
 
 
