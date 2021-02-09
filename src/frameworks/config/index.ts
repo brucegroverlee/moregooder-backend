@@ -9,7 +9,6 @@ export default {
   env: process.env.APP_ENV || dev,
   server: {
     root: process.env.SERVER_ROOT || "/api",
-    host: process.env.SERVER_HOST || "localhost",
     port: process.env.PORT || 3003,
     origins:
       process.env.ORIGINS || "http://localhost:3000,http://localhost:3001,http://localhost:3002",
@@ -27,8 +26,8 @@ export default {
     defaultLang: "en",
   },
   jwt: {
-    JWT_SECRET: process.env.JWT_SECRET || "abcdef",
-    JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || "30d",
+    JWT_SECRET: process.env.JWT_SECRET,
+    JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
   },
   firestore: {
     GOOGLE_PROJECT_ID: process.env.GOOGLE_PROJECT_ID ,

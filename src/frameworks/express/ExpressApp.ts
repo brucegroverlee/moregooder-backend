@@ -77,7 +77,7 @@ export class ExpressApp {
       this.app.listen(config.server.port, () => {
         // tslint:disable-next-line:no-console
         console.log(
-          `${config.env} server v${pkg.version} running on ${config.server.host}:${config.server.port}${config.server.root}`,
+          `${config.env} server v${pkg.version} running on ${config.server.port}${config.server.root}`,
         );
       });
     }
