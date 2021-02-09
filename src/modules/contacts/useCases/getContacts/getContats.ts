@@ -25,7 +25,7 @@ export function getContacts(
 ) {
   return async (request: IGetContactsRequestModel): Promise<void> => {
     try {
-      const newContact = await contactsRepository;
+      const newContact = await contactsRepository.findAndCountAll();
       presenter.resolve(newContact);
       return;
     } catch (error) {
