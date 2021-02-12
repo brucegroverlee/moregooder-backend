@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/brucegroverlee/moregooder-backend/compare/v1.2.2...v1.3.0) (2021-02-12)
+
+
+### Features
+
+* **contacts:** get contacts from db [ch112] ([873f066](https://github.com/brucegroverlee/moregooder-backend/commit/873f066e82315d2107ac40137664b12f5f855509))
+
+
+### Others
+
+* **constacts:** i forgot add the getContacts file ([92500cc](https://github.com/brucegroverlee/moregooder-backend/commit/92500cc03fc5b6a4ce466536300fbf12f00277fe))
+* **contacts:** sharing code about contacts ([2d106bc](https://github.com/brucegroverlee/moregooder-backend/commit/2d106bca60bbbc6b281fbd6aa022036633977c39))
+
 ### [1.2.2](https://github.com/brucegroverlee/moregooder-backend/compare/v1.2.1...v1.2.2) (2021-02-04)
 
 
