@@ -41,6 +41,10 @@ export class RepositoryMock<T extends IEntities> implements IRepositories<T> {
     return this.findOne({ id, });
   }
 
+  findAndCountAll(query: any, pagination: { page: number; perPage: number; }): Promise<{ count: number; rows: T[]; }> {
+    throw new Error("Method not implemented.");
+  }
+
   async isAvailable(query: object): Promise<boolean> {
     try {
       const doc = await this.findOne(query);

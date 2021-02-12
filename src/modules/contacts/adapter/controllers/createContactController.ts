@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { createContact } from "../../useCases/createContact/createContact";
-import { IContactsRepository } from "../../useCases/sharedPorts/IContactsRepository";
+import { IContactsRepository } from "../../useCases/ports";
 import { ICreateContactRequestModel } from "../../useCases/createContact/createContact";
 import { CreateContactPresenter } from "../presenters/CreateContactPresenter";
 import { ViewModel } from "../../../shared/adapters/viewModel/ViewModel";
@@ -25,4 +25,4 @@ export const controller = (peopleRepository: IContactsRepository) => {
   }
 }
 
-export const createPersonController = controller(ContactsRepositoryFactory.getRepository());
+export const createContactController = controller(ContactsRepositoryFactory.getRepository());

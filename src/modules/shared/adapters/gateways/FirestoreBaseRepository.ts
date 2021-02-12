@@ -1,4 +1,4 @@
-// import { FirebaseFirestore } from "@firebase/firestore-types";
+import { CollectionReference, Query, DocumentData, OrderByDirection } from "@firebase/firestore-types";
 import { IEntities } from "../../entities/IEntities";
 import { IDType } from "../../entities/types";
 import { IRepositories } from "../../useCases/ports/IRepositories";
@@ -36,10 +36,10 @@ export class FirestoreBaseRepository<T extends IEntities> {
   private async _findAll(
     payload: object,
     options: {
-      order?: string;
+      sort?: OrderByDirection;
       timeRange?: {
-        since?: string;
-        until?: string;
+        since: string;
+        until: string;
       };
       pagination?: {
         page: number;
@@ -50,19 +50,25 @@ export class FirestoreBaseRepository<T extends IEntities> {
     try {
       const documents: T[] = [];
       const queryList = Object.entries(payload);
-      const queryItem = queryList.shift();
-      const key = queryItem[0];
-      const value = queryItem[1];
-      let ref = this.firestore.db.collection(this.tableName).where(key, "==", value);
-      for (const [_key, _value] of queryList) {
-        ref = ref.where(_key, "==", _value);
+      let ref: CollectionReference<DocumentData>|Query<DocumentData> = this.firestore.db.collection(this.tableName);
+      if (queryList.length !== 0) {
+        const queryItem = queryList.shift();
+        const key = queryItem[0];
+        const value = queryItem[1];
+        ref = ref.where(key, "==", value);
+        for (const [_key, _value] of queryList) {
+          ref = ref.where(_key, "==", _value);
+        }
       }
-      if (options.order && typeof options.order === "string") {
-        // ref = ref.orderBy("createdAt", "asc");
+      if (options?.timeRange) {
+        ref = ref.where("createdAt", "<=", options.timeRange.since).where("createdAt", ">=", options.timeRange.until);
       }
-      if (options.pagination) {
-        const startPoint = options.pagination.page ? 
-        ref = ref.startAt(snapshot);
+      if (options?.sort) {
+        ref = ref.orderBy("createdAt", options.sort);
+      }
+      if (options?.pagination) {
+        const startPoint = options.pagination.page === 1 ? (1) : ((options.pagination.page - 1) * options.pagination.perPage);
+        ref = ref.startAt(startPoint).limit(options.pagination.perPage);
       }
       const snapshot = await ref.get();
       if (snapshot.empty) {
@@ -115,9 +121,13 @@ export class FirestoreBaseRepository<T extends IEntities> {
     pagination: {
       page: number,
       perPage: number
-  }): Promise<{ count: number, rows: T[] }> {
+    }
+  ): Promise<{ count: number, rows: T[] }> {
     try {
-      const documents = await this._findAll(query);
+      const documents = await this._findAll(query, {
+        sort: "asc",
+        pagination,
+      });
       return {
         count: 0,
         rows: documents,

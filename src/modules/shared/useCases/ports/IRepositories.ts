@@ -13,8 +13,5 @@ export interface IRepositories<T extends IEntities>{
   }): Promise<{ count: number, rows: T[] }>;
   isAvailable(query: object): Promise<boolean>;
   delete(query: object): Promise<number>;
-  /*
-  
-  update(where: any, values: any): IRepositories[];
-  */
+  /*  update(where: any, values: any): IRepositories[]; */
 }

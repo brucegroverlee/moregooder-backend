@@ -10,10 +10,11 @@ export const errorHandler = (
   if (err instanceof AbstractError) {
     return res.status(err.statusCode).send({ errors: err.serializeErrors() });
   }
-
+  // tslint:disable-next-line:no-console
+  console.error("ErrorHandler:...");
   // tslint:disable-next-line:no-console
   console.error(err);
-  res.status(400).send({
+  res.status(500).send({
     errors: [{ message: 'Something went wrong' }],
   });
 };

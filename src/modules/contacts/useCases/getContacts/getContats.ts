@@ -1,9 +1,5 @@
-import { IContactsRepository } from "../sharedPorts/IContactsRepository";
-import { IContact } from "../../entities/IContact";
-
-export interface IGetContactsResponseModel {
-  resolve(contact: IContact): void;
-}
+import { IGetListResponseModel } from "../../../shared/useCases/ports";
+import { IContactsRepository } from "../ports";
 
 export interface IGetContactsRequestModel {
   query: {
@@ -12,21 +8,23 @@ export interface IGetContactsRequestModel {
     country?: string;
   };
   pagination: {
-    page?: number;
-    perPage?: number;
-    since?: string;
-    until?: string;
+    page: number;
+    perPage: number;
+  };
+  timeRange?: {
+    since: string;
+    until: string;
   };
 }
 
 export function getContacts(
   contactsRepository: IContactsRepository,
-  presenter: IGetContactsResponseModel
+  presenter: IGetListResponseModel
 ) {
   return async (request: IGetContactsRequestModel): Promise<void> => {
     try {
-      const newContact = await contactsRepository.findAndCountAll();
-      presenter.resolve(newContact);
+      const { count, rows, } = await contactsRepository.findAndCountAll(request.query, request.pagination);
+      presenter.resolve({rows, count, ...request.pagination});
       return;
     } catch (error) {
       throw error;

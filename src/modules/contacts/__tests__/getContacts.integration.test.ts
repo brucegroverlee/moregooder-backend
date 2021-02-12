@@ -45,8 +45,22 @@ describe("Create a new contact integration test suit", () => {
         .set("Authorization", `Bearer ${token}`);
         expect(res.status).toEqual(202);
         expect(typeof res.body).toEqual("object");
-        expect(res.body.data.length).toEqual(3);
+        expect(res.body.data.length).toBeGreaterThan(3);
+        expect(res.body.pagination.page).toEqual(1);
+        expect(res.body.pagination.perPage).toEqual(10);
+        done();
+    });
+
+    it("should get the filtered list of contacts by country.", async (done) => {
+      const res = await requester
+        .get("/api/contacts?country=[contacts::list] country")
+        .set("Authorization", `Bearer ${token}`);
+        expect(res.status).toEqual(202);
+        expect(typeof res.body).toEqual("object");
+        expect(res.body.data.length).toBe(3);
         expect(res.body.data[0].country).toEqual("[contacts::list] country");
+        expect(res.body.pagination.page).toEqual(1);
+        expect(res.body.pagination.perPage).toEqual(10);
         done();
     });
   });

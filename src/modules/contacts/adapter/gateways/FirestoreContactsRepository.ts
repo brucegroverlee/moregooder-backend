@@ -1,6 +1,6 @@
 import { FirestoreBaseRepository } from "../../../shared/adapters/gateways/FirestoreBaseRepository";
 import { IContact } from "../../entities/IContact";
-import { IContactsRepository } from "../../useCases/sharedPorts/IContactsRepository";
+import { IContactsRepository } from "../../useCases/ports";
 import config from "../../../../frameworks/config";
 
 export class FirestoreContactsRepository extends FirestoreBaseRepository<IContact> implements IContactsRepository {
