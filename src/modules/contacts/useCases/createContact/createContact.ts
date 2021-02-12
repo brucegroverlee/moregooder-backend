@@ -1,4 +1,4 @@
-import { IContactsRepository } from "../sharedPorts/IContactsRepository";
+import { IContactsRepository } from "../ports";
 import { IContact } from "../../entities/IContact";
 
 export interface ICreateContactResponseModel {

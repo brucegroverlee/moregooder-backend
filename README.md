@@ -1,12 +1,10 @@
 # Moregooder [backend]
 
-**url: https://moregooder.uc.r.appspot.com**
-
 ## Features
 - Clean Architecture / Hexagonal Architecture (Ports and Adapters)
 - Firestore DB
 - TypeScript
-- Integrtion and unit testing
+- Integrtion and unit testing (TDD)
 - Documentation with Swagger
 - CI with Github Actions
 

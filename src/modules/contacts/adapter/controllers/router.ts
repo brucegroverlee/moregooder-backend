@@ -3,10 +3,15 @@ const contactsRouter = express.Router();
 
 import { authentication } from "../../../shared/middlewares/authentication";
 import { validateBody } from "../../../shared/adapters/middlewares/validateBody";
+import { validateQuery } from "../../../shared/adapters/middlewares/validateQuery";
 
-import { createPersonController } from "./createPersonController";
+import { createContactController } from "./createContactController";
 import { createContactBody } from "../middlewares/createContactBody";
 
-contactsRouter.post("/contacts", authentication, validateBody(createContactBody), createPersonController);
+import { getContactsController } from "./getContactsController";
+import { getContactsQuery } from "../middlewares/getContactsQuery";
+
+contactsRouter.post("/contacts", authentication, validateBody(createContactBody), createContactController);
+contactsRouter.get("/contacts", authentication, validateQuery(getContactsQuery), getContactsController);
 
 export default contactsRouter;

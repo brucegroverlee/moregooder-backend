@@ -31,14 +31,13 @@ jobs:
       env:
         APP_ENV: ${{ secrets.APP_ENV }}
         SERVER_ROOT: /api
-        SERVER_HOST: https://moregooder.uc.r.appspot.com
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
         JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }}
         GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
         FIRESTORE_USERS_COLLECTION: ${{ secrets.FIRESTORE_USERS_COLLECTION }}
         FIRESTORE_CONTACTS_COLLECTION: ${{ secrets.FIRESTORE_CONTACTS_COLLECTION }}
         SWAGGER_TITLE: Moregooder API Reference
-        SWAGGER_SERVER: "https://moregooder.uc.r.appspot.com/api"
+        SWAGGER_SERVER: ${{ secrets.SWAGGER_SERVER }}
     - name: Deploy to Production
       uses: google-github-actions/deploy-appengine@main
       with:
