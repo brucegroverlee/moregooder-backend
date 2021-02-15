@@ -1,4 +1,4 @@
-import { IContactsRepository } from "../ports";
+import { IContactsRepository, IContactsExternalService } from "../ports";
 import { IContact } from "../../entities/IContact";
 
 export interface ICreateContactResponseModel {
@@ -13,11 +13,13 @@ export interface ICreateContactRequestModel {
 
 export function createContact(
   contactsRepository: IContactsRepository,
+  contactsExternalServices: IContactsExternalService,
   presenter: ICreateContactResponseModel
 ) {
   return async (request: ICreateContactRequestModel): Promise<void> => {
     try {
       const newContact = await contactsRepository.create(request);
+      await contactsExternalServices.create(newContact);
       presenter.resolve(newContact);
       return;
     } catch (error) {

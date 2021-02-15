@@ -35,6 +35,9 @@ export default {
     FIRESTORE_USERS_COLLECTION: process.env.FIRESTORE_USERS_COLLECTION,
     FIRESTORE_CONTACTS_COLLECTION: process.env.FIRESTORE_CONTACTS_COLLECTION,
   },
+  intercom: {
+    ACCESS_TOKEN: process.env.INTERCOM_ACCESS_TOKEN,
+  },
   swagger: {
     TITLE: process.env.SWAGGER_TITLE,
     DESCRIPTION: process.env.SWAGGER_DESCRIPTION,

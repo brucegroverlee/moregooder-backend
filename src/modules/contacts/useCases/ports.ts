@@ -8,3 +8,7 @@ export interface IContactsRepository extends IRepositories<IContact> {
     country: string;
   }): Promise<IContact>;
 }
+
+export interface IContactsExternalService {
+  create(contact: IContact): Promise<void>;
+}
