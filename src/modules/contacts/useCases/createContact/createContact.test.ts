@@ -1,8 +1,18 @@
-import { createContact } from "./createContact";
+/* tslint:disable:max-classes-per-file */
+import {
+  createContact,
+  ICreateContactRequestModel,
+  ICreateContactResponseModel,
+} from "./createContact";
+import { IContactsExternalService } from "../ports";
 import { RepositoryMockFactory } from "../../../shared/__mocks__/Repository.mock";
-import { ICreateContactRequestModel } from "./createContact";
-import { ICreateContactResponseModel } from "./createContact";
 import { IContact } from "../../entities/IContact";
+
+class ContactsExternalServices implements IContactsExternalService {
+  async create(contact: IContact): Promise<void> {
+    return;
+  }
+}
 
 class CreatePersonPresenter implements ICreateContactResponseModel {
   result: any;
@@ -22,6 +32,7 @@ describe("CreatePerson useCase", () => {
     };
     await createContact(
       RepositoryMockFactory.getRepository(),
+      new ContactsExternalServices(),
       presenter
     )(request);
 

@@ -1,13 +1,16 @@
 import { Request, Response, NextFunction } from "express";
 import { createContact } from "../../useCases/createContact/createContact";
-import { IContactsRepository } from "../../useCases/ports";
+import { IContactsRepository, IContactsExternalService } from "../../useCases/ports";
 import { ICreateContactRequestModel } from "../../useCases/createContact/createContact";
 import { CreateContactPresenter } from "../presenters/CreateContactPresenter";
 import { ViewModel } from "../../../shared/adapters/viewModel/ViewModel";
 import { ContactsRepositoryFactory } from "../gateways/ContactsRepositoryFactory";
+import { ContactsExternalServicesFactory } from "../services/ContactsExternalServices";
 
-// tslint:disable-next-line:no-shadowed-variable
-export const controller = (peopleRepository: IContactsRepository) => {
+export const controller = (
+  contactsRepository: IContactsRepository,
+  contactsExternalServices: IContactsExternalService
+) => {
   return async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
       const { body } = request;
@@ -18,11 +21,18 @@ export const controller = (peopleRepository: IContactsRepository) => {
       };
       const viewModel = new ViewModel(response);
       const presenter = new CreateContactPresenter(viewModel);
-      await createContact(peopleRepository, presenter)(requestModel);
+      await createContact(
+        contactsRepository,
+        contactsExternalServices,
+        presenter
+      )(requestModel);
     } catch (error) {
       next(error);
     }
   }
 }
 
-export const createContactController = controller(ContactsRepositoryFactory.getRepository());
+export const createContactController = controller(
+    ContactsRepositoryFactory.getRepository(),
+    ContactsExternalServicesFactory.getServices()
+  );
