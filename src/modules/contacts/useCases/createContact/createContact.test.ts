@@ -26,6 +26,7 @@ describe("CreatePerson useCase", () => {
   it("should create a new person", async () => {
     const presenter = new CreatePersonPresenter();
     const request: ICreateContactRequestModel = {
+      workspaceId: 10,
       name: "Fake Name",
       email: "Fake email",
     };

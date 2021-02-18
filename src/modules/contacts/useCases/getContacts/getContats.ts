@@ -1,8 +1,10 @@
 import { IGetListResponseModel } from "../../../shared/useCases/ports";
+import { IDType } from "../../../shared/entities/types";
 import { IContactsRepository } from "../ports";
 
 export interface IGetContactsRequestModel {
   query: {
+    workspaceId?: IDType;
     name?: string;
     email?: string;
   };

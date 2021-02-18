@@ -41,6 +41,7 @@ describe("Create a new contact integration test suit", () => {
         .post("/api/contacts")
         .set("Authorization", `Bearer ${token}`)
         .send({
+          workspaceId: 15,
           name: "[contacts::create] name",
           email: "contacts.create@email.com",
         });

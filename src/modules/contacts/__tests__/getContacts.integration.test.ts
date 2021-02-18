@@ -28,9 +28,9 @@ describe("Create a new contact integration test suit", () => {
     token = jwtCreator(1);
     const contactsRepository = ContactsRepositoryFactory.getRepository();
     await contactsRepository.delete({ name: "[contacts::list] name" });
-    await contactsRepository.create({ name: "[contacts::list] name", email: "email1@emailcom", });
-    await contactsRepository.create({ name: "[contacts::list] name", email: "email2@emailcom", });
-    await contactsRepository.create({ name: "[contacts::list] name", email: "email3@emailcom", });
+    await contactsRepository.create({ workspaceId: 26, name: "[contacts::list] name", email: "email1@emailcom", });
+    await contactsRepository.create({ workspaceId: 26, name: "[contacts::list] name", email: "email2@emailcom", });
+    await contactsRepository.create({ workspaceId: 26, name: "[contacts::list] name", email: "email3@emailcom", });
     done();
   });
 
