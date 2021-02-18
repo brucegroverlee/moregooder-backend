@@ -15,9 +15,9 @@ export const controller = (
     try {
       const { body } = request;
       const requestModel: ICreateContactRequestModel = {
+        workspaceId: body.workspaceId,
         name: body.name,
         email: body.email,
-        country: body.country,
       };
       const viewModel = new ViewModel(response);
       const presenter = new CreateContactPresenter(viewModel);

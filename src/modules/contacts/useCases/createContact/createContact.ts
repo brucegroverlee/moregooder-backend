@@ -1,14 +1,15 @@
 import { IContactsRepository, IContactsExternalService } from "../ports";
 import { IContact } from "../../entities/IContact";
+import { IDType } from "../../../shared/entities/types";
 
 export interface ICreateContactResponseModel {
   resolve(contact: IContact): void;
 }
 
 export interface ICreateContactRequestModel {
+  workspaceId: IDType;
   name: string;
   email: string;
-  country: string;
 }
 
 export function createContact(

@@ -1,8 +1,8 @@
-import { FirestoreContactsRepository } from "./FirestoreContactsRepository";
-import { firestore } from "../../../../frameworks/firestore/firestore";
+import { ContactsMySqlRepository } from "./ContactsMySqlRepository";
+import { db } from "../../../../frameworks/mysql/mysql";
 
 export class ContactsRepositoryFactory {
   static getRepository() {
-    return new FirestoreContactsRepository(firestore);
+    return new ContactsMySqlRepository(db);
   }
 }

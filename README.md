@@ -8,6 +8,25 @@
 - Documentation with Swagger
 - CI with Github Actions
 
+## DB migrations
+#### Set db env
+change the values of the .env file
+
+#### Up migrations
+```
+npm run db-migrate up
+```
+
+#### Down migrations
+```
+npm run db-migrate down
+```
+
+#### Create a new migrations
+```
+npm run db-migrate create nameOfMigration
+```
+
 ## Deploy
 
 ```

@@ -1,8 +1,8 @@
-import { FirestoreUsersRepository } from "./FirestoreUsersRepository";
-import { firestore } from "../../../../frameworks/firestore/firestore";
+import { UsersMySqlRepository } from "./UsersMySqlRepository";
+import { db } from "../../../../frameworks/mysql/mysql";
 
 export class UsersRepositoryFactory {
   static getRepository() {
-    return new FirestoreUsersRepository(firestore);
+    return new UsersMySqlRepository(db);
   }
 }

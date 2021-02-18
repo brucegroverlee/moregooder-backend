@@ -30,7 +30,7 @@ describe("Signup useCase", () => {
     const signup = new Signup(usersRepository, bcrypt, jwt, presenter);
     await signup.execute(requestModel);
     expect(typeof presenter.result).toBe("string");
-    expect(presenter.result).toBe("{\"userId\":\"1\"}");
+    expect(presenter.result).toBe("{\"userId\":1}");
   });
 
   it("shouldn\'t signup a new user.", async () => {
