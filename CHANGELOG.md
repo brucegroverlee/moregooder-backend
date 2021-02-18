@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/brucegroverlee/moregooder-backend/compare/v1.4.0...v1.5.0) (2021-02-18)
+
+
+### Features
+
+* **mysql:** migrate to mysql [ch141] ([b51bdb5](https://github.com/brucegroverlee/moregooder-backend/commit/b51bdb5ccc871672a2db07b2dc8d3c68eaac18e2))
+
 ## [1.4.0](https://github.com/brucegroverlee/moregooder-backend/compare/v1.3.0...v1.4.0) (2021-02-15)
 
 
