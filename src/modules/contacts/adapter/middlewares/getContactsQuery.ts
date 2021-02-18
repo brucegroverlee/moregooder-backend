@@ -8,7 +8,4 @@ export const getContactsQuery = getListQuery({
   email: Joi.string()
     .min(1)
     .max(250),
-  country: Joi.string()
-    .min(1)
-    .max(250),
 });

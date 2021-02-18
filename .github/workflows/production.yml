@@ -33,9 +33,13 @@ jobs:
         SERVER_ROOT: /api
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
         JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }}
-        GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
-        FIRESTORE_USERS_COLLECTION: ${{ secrets.FIRESTORE_USERS_COLLECTION }}
-        FIRESTORE_CONTACTS_COLLECTION: ${{ secrets.FIRESTORE_CONTACTS_COLLECTION }}
+        MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+        MYSQL_PORT: ${{ secrets.MYSQL_PORT }}
+        MYSQL_USER: ${{ secrets.MYSQL_USER }}
+        MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+        MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+        DB_SOCKET_PATH: ${{ secrets.DB_SOCKET_PATH }}
+        CLOUD_SQL_CONNECTION_NAME: ${{ secrets.CLOUD_SQL_CONNECTION_NAME }}
         INTERCOM_ACCESS_TOKEN: ${{ secrets.INTERCOM_ACCESS_TOKEN }}
         SWAGGER_TITLE: Moregooder API Reference
         SWAGGER_SERVER: ${{ secrets.SWAGGER_SERVER }}

@@ -50,7 +50,7 @@ describe("Me useCase", () => {
     const usersRepository = new RepositoryMock<IUsers>();
     const jwt = new JwtMock();
     const requestModel = {
-      userId: "1",
+      userId: 1,
     };
     const presenter = new PresenterMock();
     const me = new Me(usersRepository, jwt, presenter);

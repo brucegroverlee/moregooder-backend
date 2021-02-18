@@ -11,12 +11,18 @@ export class RepositoryMock<T extends IEntities> implements IRepositories<T> {
     this.counter = 1;
     this.documents = [];
   }
+  findAll(query: object, options: { sort?: string; timeRange?: { since: string; until: string; }; pagination?: { page: number; perPage: number; }; }): Promise<T[]> {
+    throw new Error("Method not implemented.");
+  }
+  findAndCountAll(query: any, options: { sort?: string; timeRange?: { since: string; until: string; }; pagination?: { page: number; perPage: number; }; }): Promise<{ count: number; rows: T[]; }> {
+    throw new Error("Method not implemented.");
+  }
 
   async create(values: object): Promise<T> {
     const now = new Date();
     const newDocument: any = {
       ...values,
-      id: JSON.stringify(this.counter),
+      id: this.counter,
       createdAt: now,
       updatedAt: now,
     };
@@ -39,10 +45,6 @@ export class RepositoryMock<T extends IEntities> implements IRepositories<T> {
 
   findById(id: IDType): Promise<T|null> {
     return this.findOne({ id, });
-  }
-
-  findAndCountAll(query: any, pagination: { page: number; perPage: number; }): Promise<{ count: number; rows: T[]; }> {
-    throw new Error("Method not implemented.");
   }
 
   async isAvailable(query: object): Promise<boolean> {

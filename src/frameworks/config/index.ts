@@ -29,11 +29,14 @@ export default {
     JWT_SECRET: process.env.JWT_SECRET,
     JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN,
   },
-  firestore: {
-    GOOGLE_PROJECT_ID: process.env.GOOGLE_PROJECT_ID ,
-    GOOGLE_APPLICATION_CREDENTIALS: process.env.GOOGLE_APPLICATION_CREDENTIALS,
-    FIRESTORE_USERS_COLLECTION: process.env.FIRESTORE_USERS_COLLECTION,
-    FIRESTORE_CONTACTS_COLLECTION: process.env.FIRESTORE_CONTACTS_COLLECTION,
+  mysql: {
+    HOST: process.env.MYSQL_HOST,
+    PORT: process.env.MYSQL_PORT,
+    USER: process.env.MYSQL_USER,
+    PASSWORD: process.env.MYSQL_PASSWORD,
+    DATABASE: process.env.MYSQL_DATABASE,
+    DB_SOCKET_PATH: process.env.DB_SOCKET_PATH || '',
+    CLOUD_SQL_CONNECTION_NAME: process.env.CLOUD_SQL_CONNECTION_NAME || '',
   },
   intercom: {
     ACCESS_TOKEN: process.env.INTERCOM_ACCESS_TOKEN,

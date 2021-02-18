@@ -8,6 +8,16 @@ paths:
       security:
       - bearerAuth: []
       parameters:
+        - name: workspaceId
+          in: query
+          description: Ex.
+                       ```
+                       /contacts?workspaceId=164
+                       ```
+          required: false
+          schema:
+            type: number
+          example: 164
         - name: name
           in: query
           description: Ex.
@@ -28,16 +38,6 @@ paths:
           schema:
             type: string
           example: somebody@email.com
-        - name: country
-          in: query
-          description: Ex.
-                       ```
-                       /contacts?country=argentina
-                       ```
-          required: false
-          schema:
-            type: string
-          example: argentina
         - name: page
           in: query
           description: Get the specific page. Default value is 1.

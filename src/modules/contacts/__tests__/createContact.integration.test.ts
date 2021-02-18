@@ -25,7 +25,7 @@ describe("Create a new contact integration test suit", () => {
 
   beforeAll( async (done) => {
     requester = chai.request(server.app).keepOpen();
-    token = jwtCreator("1");
+    token = jwtCreator(1);
     const contactsRepository = ContactsRepositoryFactory.getRepository();
     await contactsRepository.delete({ name: "[contacts::create] name" });
     done();
@@ -43,7 +43,6 @@ describe("Create a new contact integration test suit", () => {
         .send({
           name: "[contacts::create] name",
           email: "contacts.create@email.com",
-          country: "Fake country",
         });
         expect(res.status).toEqual(201);
         expect(typeof res.body).toEqual("object");

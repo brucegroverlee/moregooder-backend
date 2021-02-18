@@ -1,6 +1,7 @@
 import { Login } from "./Login";
 import { IUsers } from "../../entities/IUsers";
 import { RepositoryMock } from "../../../shared/__mocks__/Repository.mock";
+import { IUsersRepository } from "../sharedPorts/IUsersRepository";
 import { BcryptMock } from "../__mocks__/Bcrypt.mock";
 import { JwtMock } from "../__mocks__/Jwt.mock";
 import { ILoginResponseModel } from "./ports/ILoginResponseModel";
@@ -23,7 +24,7 @@ class PresenterMock implements ILoginResponseModel {
 
 describe("Login useCase", () => {
   it("should login the user.", async () => {
-    const usersRepository = new RepositoryMock<IUsers>();
+    const usersRepository = new RepositoryMock<IUsers>() as unknown as IUsersRepository;
     usersRepository.create({
       name: "grover",
       email: "grover@email.com",
@@ -39,11 +40,11 @@ describe("Login useCase", () => {
     const login = new Login(usersRepository, bcrypt, jwt, presenter);
     await login.execute(requestModel);
     expect(typeof presenter.result).toBe("string");
-    expect(presenter.result).toBe("{\"userId\":\"1\"}");
+    expect(presenter.result).toBe("{\"userId\":1}");
   });
 
   it("shouldn\'t login the user. the user doesn\'t exist", async () => {
-    const usersRepository = new RepositoryMock<IUsers>();
+    const usersRepository = new RepositoryMock<IUsers>() as unknown as IUsersRepository;
     const bcrypt = new BcryptMock();
     const jwt = new JwtMock();
     const presenter = new PresenterMock();
@@ -58,7 +59,7 @@ describe("Login useCase", () => {
   });
 
   it("shouldn\'t login the user. the password is not correct", async () => {
-    const usersRepository = new RepositoryMock<IUsers>();
+    const usersRepository = new RepositoryMock<IUsers>() as unknown as IUsersRepository;
     usersRepository.create({
       name: "grover",
       email: "grover@email.com",

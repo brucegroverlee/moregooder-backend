@@ -7,7 +7,4 @@ export const createContactBody = Joi.object({
   email: Joi.string()
     .min(1)
     .required(),
-  country: Joi.string()
-    .min(1)
-    .required(),
 });

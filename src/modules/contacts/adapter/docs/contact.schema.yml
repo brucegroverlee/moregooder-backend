@@ -2,15 +2,15 @@ components:
   schemas:
     CreateContactRequest:
       properties:
+        workspaceId:
+          type: number
+          example: 15
         name:
           type: string
           example: john
         email:
           type: string
           example: john@email.com
-        country:
-          type: string
-          example: canada
 
     CreateContactResponse:
       properties:
@@ -19,14 +19,20 @@ components:
     Contact:
       properties:
         id:
-          type: string
-          example: bJnb8fWsdWAkh2978kdG
+          type: number
+          example: 145
+        workspaceId:
+          type: number
+          example: 15
         name:
           type: string
           example: john
         email:
           type: string
           example: john@email.com
-        country:
+        createdAt:
           type: string
-          example: canada
+          example: 2021-02-17 16:09:34
+        updatedAt:
+          type: string
+          example: 2021-02-17 16:09:34

@@ -5,7 +5,6 @@ export interface IContactsRepository extends IRepositories<IContact> {
   create(values: {
     name: string;
     email: string;
-    country: string;
   }): Promise<IContact>;
 }
 

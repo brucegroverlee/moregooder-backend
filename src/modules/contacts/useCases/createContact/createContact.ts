@@ -8,7 +8,6 @@ export interface ICreateContactResponseModel {
 export interface ICreateContactRequestModel {
   name: string;
   email: string;
-  country: string;
 }
 
 export function createContact(

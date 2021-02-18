@@ -5,7 +5,6 @@ export interface IGetContactsRequestModel {
   query: {
     name?: string;
     email?: string;
-    country?: string;
   };
   pagination: {
     page: number;
@@ -23,7 +22,13 @@ export function getContacts(
 ) {
   return async (request: IGetContactsRequestModel): Promise<void> => {
     try {
-      const { count, rows, } = await contactsRepository.findAndCountAll(request.query, request.pagination);
+      const { count, rows, } = await contactsRepository
+      .findAndCountAll(
+      request.query,
+      {
+        pagination: request.pagination,
+        timeRange: request.timeRange,
+      });
       presenter.resolve({rows, count, ...request.pagination});
       return;
     } catch (error) {

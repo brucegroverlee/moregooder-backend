@@ -17,7 +17,6 @@ export const controller = (
       const requestModel: ICreateContactRequestModel = {
         name: body.name,
         email: body.email,
-        country: body.country,
       };
       const viewModel = new ViewModel(response);
       const presenter = new CreateContactPresenter(viewModel);

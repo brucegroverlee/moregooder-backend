@@ -9,7 +9,7 @@ import { swaggerConfig } from "../swagger/swagger.config";
 import { errorHandler } from "./middlewares/errorHandler";
 import { NotFoundError } from "../../modules/shared/errors/NotFoundError";
 import config from "../config";
-import { firestore } from "../firestore/firestore";
+import { db } from "../mysql/mysql";
 import pkg from "../../../package.json";
 
 import usersRouter from "../../modules/users/adapters/controllers/router";
@@ -77,7 +77,7 @@ export class ExpressApp {
       this.app.listen(config.server.port, () => {
         // tslint:disable-next-line:no-console
         console.log(
-          `${config.env} server v${pkg.version} running on ${config.server.port}${config.server.root}`,
+          `${config.env} server v${pkg.version} running on port ${config.server.port} and path ${config.server.root}`,
         );
       });
     }
@@ -85,7 +85,7 @@ export class ExpressApp {
 
   private async RunServices(): Promise<void> {
     try {
-      await firestore.connect();
+      await db.connect();
       this.Listen();
     } catch (error) {
       throw error;

@@ -28,7 +28,6 @@ describe("CreatePerson useCase", () => {
     const request: ICreateContactRequestModel = {
       name: "Fake Name",
       email: "Fake email",
-      country: "Fake country",
     };
     await createContact(
       RepositoryMockFactory.getRepository(),

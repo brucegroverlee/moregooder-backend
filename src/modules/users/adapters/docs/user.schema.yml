@@ -39,15 +39,18 @@ components:
 
     User:
       properties:
-        object:
-          type: string
-          example: user 
         id:
-          type: string
-          example: bJnb8fWsdWAkh2978kdG
+          type: number
+          example: 25
         email:
           type: string
           example: bruce@gmail.com
         name:
           type: string
           example: bruce
+        createdAt:
+          type: string
+          example: 2021-02-17 16:09:34
+        updatedAt:
+          type: string
+          example: 2021-02-17 16:09:34
